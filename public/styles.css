@@ -1,0 +1,5 @@
+.grocery-list{
+    margin-top: 2rem;
+    transition: var(--transition);
+    visibility: hidden;
+}
