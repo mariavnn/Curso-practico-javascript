@@ -1,10 +1,102 @@
-body{
+:root{
+    --container-bg: #F3F3F1;
+    --danger-alert: #721c24;
+    --success-alert: #155724;
+    --btn-bg: #F9F9B9;
+    --btn-hover: #F3F39B;
+    --text-color: #70706B;
+    --transition: all 0.3s linear;
+
+}
+html{
+    font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8d7da;
-    font-size: 0,8rem;
 }
 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+h1{
+    font-size: 3rem;
+    margin: 15px;
+    padding: 2px;
+}
+h3{
+    font-size: 2rem;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.alert {
+    margin-bottom: 1rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    letter-spacing: 0.2rem;
+}
+
+.alert-danger {
+    color: var(--danger-alert);
+    background: #f8d7da;
+}
+
+.alert-success {
+    color: var(--success-alert) ;
+    background: #d4edda;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.section-center{
+    background-color: var(--container-bg);
+    width: 70%;
+    border: #d4edda;
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 15px;
+}
+.form-control{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#grocery{
+    border-color: transparent;
+    border-radius: 8px;
+    padding: 0.35rem;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    flex: 1 0 auto;
+}
+.submit-btn{
+    background-color: var(--btn-bg);
+    border-color: transparent;
+    flex: 0 0 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px; 
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background-color: var(--btn-hover);
+}
 
 .grocery-container{
     margin-top: 2rem;
@@ -20,31 +112,18 @@ body{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-    transition: var(--transition);
     padding: 0.25rem 1rem;
-    border-radius: var(--radius);
+    border-radius: 8px;
     text-transform: capitalize;
+    transition: var(--transition);
 }
 
-
-.alert {
-    margin-bottom: 1rem;
-    height: 1.25rem;
-    display: grid;
-    align-items: center;
-    text-align: center;
-    font-size: 0.7rem;
-    border-radius: 0.25rem;
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
+.grocery-item:hover {
+    color: hsl(210, 22%, 49%);
+    background: hsl(210, 36%, 96%);
 }
+  
+.grocery-item:hover .title {
+    color: hsl(210, 22%, 49%);
 
-.alert-danger {
-    color: #721c24;
-    background: #f8d7da;
-}
-
-.alert-success {
-    color: #155724;
-    background: #d4edda;
 }
