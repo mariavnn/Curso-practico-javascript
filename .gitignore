@@ -132,6 +132,3 @@ dist
 #Editor
 .vscode
 *.svg
-
-principal.js
-estilos.css

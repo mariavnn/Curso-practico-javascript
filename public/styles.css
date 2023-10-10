@@ -1,13 +1,21 @@
 :root{
-    --container-bg: #F3F3F1;
+    --bg-color: #D4E6F1;
+    --container-bg: #F2F4F4;
+    --shadow-color: #B2BABB;
     --danger-alert: #721c24;
     --success-alert: #155724;
-    --btn-bg: #F9F9B9;
-    --btn-hover: #F3F39B;
+    --clean-btn: #F1948A;
+    --clean-btn-hover: #EC7063;
+    --edit-btn: #7DCEA0;
+    --btn-bg: #B2BABB;
+    --btn-hover: #5D6D7E;
     --text-color: #70706B;
     --transition: all 0.3s linear;
+    --spacing: 0.2rem;
+    --radius: 0.8rem;
 
 }
+
 html{
     font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,16 +27,43 @@ html{
     padding: 0;
 }
 
+body{
+    background-color: var(--bg-color);
+}
+
+main{
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h1{
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 15px;
     padding: 2px;
 }
 h3{
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
+    letter-spacing: var(--spacing);
+    
+}
+
+.section-center{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 60rem;
+    margin-top: 8rem;
+}
+
+.section-center{
+    background-color: var(--container-bg);
+    box-shadow: 5px 5px 10px var(--shadow-color);
+    border-radius: var(--radius);
+    padding: 5rem;
     
 }
 
@@ -38,9 +73,9 @@ h3{
     display: flex;
     justify-content: center;
     align-content: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 0.4rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: var(--spacing);
 }
 
 .alert-danger {
@@ -53,19 +88,6 @@ h3{
     background: #d4edda;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-}
-
-.section-center{
-    background-color: var(--container-bg);
-    width: 70%;
-    border: #d4edda;
-    border-radius: 1rem;
-    padding: 10px;
-    margin: 15px;
-}
 .form-control{
     display: flex;
     justify-content: center;
@@ -75,27 +97,34 @@ main{
 
 #grocery{
     border-color: transparent;
-    border-radius: 8px;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
     padding: 0.35rem;
     padding-left: 1rem;
     font-size: 1.4rem;
     flex: 1 0 auto;
 }
+#grocery::placeholder{
+    color: var(--text-color);
+}
+
 .submit-btn{
     background-color: var(--btn-bg);
     border-color: transparent;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
     flex: 0 0 5rem;
     display: flex;
     align-items: center;
     padding: 0.8rem;
     font-size: 1.4rem;
     font-weight: bold;
-    border-radius: 8px; 
     cursor: pointer;
 }
 
 .submit-btn:hover{
     background-color: var(--btn-hover);
+    color: #FFF;
 }
 
 .grocery-container{
@@ -122,8 +151,76 @@ main{
     color: hsl(210, 22%, 49%);
     background: hsl(210, 36%, 96%);
 }
-  
+
+.title{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--text-color);
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+}
+
 .grocery-item:hover .title {
     color: hsl(210, 22%, 49%);
 
+}
+
+.edit-btn,
+.delete-btn {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-color: black;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0 0.15rem;
+    transition: var(--transition);
+}
+
+.edit-btn{
+    background-image: url("/svg/pencil.svg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    border: none; 
+}
+.delete-btn{
+    color: var(--edit-btn);
+    background-image: url("/svg/trash.svg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    border: none;  
+}
+
+.clear-btn {
+    text-transform: capitalize;
+    width: 10rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-color: transparent;
+    color: var(--clean-btn);
+    margin: 0 auto;
+    font-size: 1.4rem;
+    letter-spacing: var(--spacing);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1.25rem;
+}
+  
+.clear-btn:hover {
+    color: var(--clean-btn-hover);
+}
+
+@media screen and (min-width:1024px) {
+    h1{
+        font-size: 5rem;
+    }
+    h3{
+        font-size: 3rem;
+    }
+    .section-center {
+      width: 95vw;
+    }
 }
